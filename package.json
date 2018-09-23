@@ -1,0 +1,33 @@
+{
+  "name": "hello-roman",
+  "description": "Hello Roman official website",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "next",
+    "gatsby-image": "^2.0.0-rc.0",
+    "normalize.css": "^8.0.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0",
+    "react-pose": "^3.3.4",
+    "react-tweet-embed": "^1.1.1",
+    "styled-components": "^3.4.5"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "gatsby-plugin-manifest": "^2.0.2-rc.0",
+    "gatsby-plugin-offline": "^1.0.18",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-react-svg": "^2.0.0-beta1",
+    "gatsby-plugin-sharp": "^2.0.0-rc.0",
+    "gatsby-plugin-styled-components": "^3.0.0-rc.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.0.1-rc.0",
+    "gatsby-transformer-sharp": "^2.1.1-rc.0"
+  }
+}
