@@ -4,6 +4,8 @@ import 'normalize.css';
 import './global.scss';
 import styles from './index.module.scss';
 
+import Navigation from '../components/Navigation/Navigation';
+
 export default props => (
   <div>
     <Helmet>
@@ -16,6 +18,6 @@ export default props => (
         content="Some content."
       />
     </Helmet>
-    <h1>Hello, roman</h1>
+    <Navigation />
   </div>
 );

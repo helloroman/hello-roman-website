@@ -1,0 +1,44 @@
+.navigationWrapper {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  background: #F8F8F8;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+
+  li {
+    margin-bottom: 40px;
+  }
+
+  span:first-child::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background: #1D1D1D;
+    margin: 0 10px;
+  }
+}
+
+.active {
+  font-weight: 700;
+}
+
+.visible {
+
+}
