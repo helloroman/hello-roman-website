@@ -1,32 +1,39 @@
 .hamburger {
-  position: relative;
-  width: 24px;
-  height: 2px;
-  background: #1D1D1D;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: transform .5s ease;
 
-  &::before, &::after {
-    position: absolute;
-    content: '';
+  &Strip {
+    position: relative;
     width: 24px;
     height: 2px;
-    display: block;
     background: #1D1D1D;
     transition: transform .5s ease;
+
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      width: 24px;
+      height: 2px;
+      display: block;
+      background: #1D1D1D;
+      transition: transform .5s ease;
+    }
+
+    &::before {
+      left: -4px;
+      top: -6px;
+    }
+
+    &::after {
+      left: -7px;
+      top: 6px;
+    }
   }
 
-  &::before {
-    left: -4px;
-    top: -6px;
-  }
-
-  &::after {
-    left: -7px;
-    top: 6px;
-  }
-
-  &:hover {
+  &:hover &Strip {
     transform: translateX(-4px);
 
     &::before {

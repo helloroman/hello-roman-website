@@ -5,6 +5,7 @@ import './global.scss';
 import styles from './index.module.scss';
 
 import Navigation from '../components/Navigation/Navigation';
+import HeroImage from '../components/HeroImage/HeroImage';
 
 export default props => (
   <div>
@@ -19,5 +20,6 @@ export default props => (
       />
     </Helmet>
     <Navigation />
+    <HeroImage />
   </div>
 );

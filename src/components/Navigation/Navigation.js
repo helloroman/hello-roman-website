@@ -42,7 +42,7 @@ class Navigation extends React.Component {
             </NavItem>
           </ul>
         </MenuWrapper>
-        <Hamburger />
+        <Hamburger onClick={this.handleMenuToggle} />
       </div>
     );
   }
