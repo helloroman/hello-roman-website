@@ -30,8 +30,11 @@ class Navigation extends React.Component {
     return (
       <div className={styles.navigationWrapper}>
         <p>Logo</p>
-        <MenuWrapper pose={isMenuOpen ? 'open' : 'closed'}>
-          <ul className={styles.menu}>
+        <MenuWrapper
+          pose={isMenuOpen ? 'open' : 'closed'}
+          className={styles.menu}
+        >
+          <ul>
             <NavItem>kursy</NavItem>
             <NavItem>youtube</NavItem>
             <NavItem>wydarzenia</NavItem>

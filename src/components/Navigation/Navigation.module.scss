@@ -1,4 +1,8 @@
 .navigationWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
   padding: 20px;
   width: 100%;
   display: flex;
@@ -9,19 +13,20 @@
 .menu {
   margin: 0;
   padding: 0;
-  background: blue;
+  background: #F8F8F8;
   top: 0;
   left: 0;
   position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   list-style: none;
+  overflow-y: hidden;
 
   li {
+    list-style: none;
     margin-bottom: 40px;
   }
 

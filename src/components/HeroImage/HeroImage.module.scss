@@ -3,6 +3,9 @@
   height: 100vh;
   padding: 20px 50px;
   position: relative;
+  background-size: cover;
+  background-position: 10% 50px;
+  background-repeat: no-repeat;
 
   &::after {
     z-index: 8888;
@@ -39,5 +42,5 @@
 
 .text {
   font-size: 1.2em;
-  margin-bottom: 15px;
+  margin: 6px 0;
 }
