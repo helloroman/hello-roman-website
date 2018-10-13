@@ -1,87 +1,54 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import posed from 'react-pose';
-import LogoImage from '../../assets/images/helloroman-logo.svg';
+import styles from './Navigation.module.scss';
 
-const Wrapper = styled.div`
-  padding: 0 20px;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+import Hamburger from './Hamburger';
 
-const StyledLogo = styled(LogoImage)`
-  width: 50px;
-  height: auto;
-`;
-
-const Hamburger = styled.div`
-  z-index: 9999;
-  position: relative;
-  width: 26px;
-  height: 2px;
-  background-color: #1D1D1D;
-  
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    display: block;
-    background-color: #1D1D1D;
-    width: 26px;
-    height: 2px;
-  }
-  
-  &::before {
-    top: -6px;
-  }
-  
-  &::after {
-    top: 6px;
-  }
-`;
-
-const AnimatedMenu = posed.ul({
-  visible: { opacity: 1 },
-  hidden: { opacity: 0 }
+const MenuWrapper = posed.nav({
+  open: { x: '0%', staggerChildren: 100 },
+  closed: { x: '-100%' }
 });
 
-const Menu = styled(AnimatedMenu)`
-  display: ${({visible}) => setTimeout(() => visible ? 'block' : 'none', 300)};
-  margin: 0;
-  z-index: 8888;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: black;
-`;
+const NavItem = posed.li({
+  open: { opacity: 1 },
+  closed: { opacity: 0 }
+});
 
-class Navigation extends Component {
+class Navigation extends React.Component {
   state = {
-    isMobileMenuOpen: false,
+    isMenuOpen: false,
   }
 
-  toggleMobileMenu = () => {
-    this.setState(prevState => ({
-      isMobileMenuOpen: !prevState.isMobileMenuOpen,
-    }));
+  handleMenuToggle = () => {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen,
+    })
   }
 
   render() {
+    const { isMenuOpen } = this.state;
     return (
-      <Wrapper>
-        <StyledLogo/>
-        <Hamburger onClick={this.toggleMobileMenu}/>
-        <Menu
-          pose={this.state.isMobileMenuOpen ? 'visible' : 'hidden'}
-        />
-      </Wrapper>
-    )
+      <div className={styles.navigationWrapper}>
+        <p>Logo</p>
+        <MenuWrapper
+          pose={isMenuOpen ? 'open' : 'closed'}
+          className={styles.menu}
+        >
+          <ul>
+            <NavItem>kursy</NavItem>
+            <NavItem>youtube</NavItem>
+            <NavItem>wydarzenia</NavItem>
+            <NavItem>kontakt</NavItem>
+            <NavItem>
+              <span className={styles.active}>PL</span>
+              <span>EN</span>
+            </NavItem>
+          </ul>
+        </MenuWrapper>
+        <Hamburger onClick={this.handleMenuToggle} />
+      </div>
+    );
   }
-};
+}
 
 export default Navigation;

@@ -1,40 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled, { injectGlobal } from 'styled-components';
 import 'normalize.css';
-import Wrapper from '../components/Wrapper/Wrapper';
+import './global.scss';
+import styles from './index.module.scss';
+
 import Navigation from '../components/Navigation/Navigation';
-
-injectGlobal`
-  html {
-    font-size: 62.5%;
-  }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.62;
-    background-color: #F8F8F8;
-    color: #1D1D1D;
-  }
-
-  *, *:after, *:before {
-    box-sizing: border-box;
-  }
-`;
-
-const LogoWrapper = styled.div`
-  width: 100%;
-  height: auto;
-  
-  svg {
-    width: 100%;
-    height: auto;
-  }
-`;
+import HeroImage from '../components/HeroImage/HeroImage';
 
 export default props => (
-  <Wrapper>
+  <div>
     <Helmet>
       <html lang="en" />
       <title>
@@ -46,5 +20,6 @@ export default props => (
       />
     </Helmet>
     <Navigation />
-  </Wrapper>
+    <HeroImage />
+  </div>
 );
