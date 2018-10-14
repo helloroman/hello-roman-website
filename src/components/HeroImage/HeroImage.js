@@ -1,5 +1,4 @@
 import React from 'react';
-import ActionButton from '../ActionButton/ActionButton';
 import styles from './HeroImage.module.scss'
 import roman from '../../assets/images/helloroman.png';
 import Logo from '../../assets/images/helloroman-logo.svg';
@@ -14,6 +13,5 @@ export default () => (
       <p className={styles.text}>frontend deeloper</p>
       <p className={styles.text}>twórca internetowy</p>
     </div>
-    <ActionButton />
   </div>
 );

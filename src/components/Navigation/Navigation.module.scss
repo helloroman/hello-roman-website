@@ -10,15 +10,6 @@
   align-items: center;
 }
 
-.logo {
-  width: 50px;
-  display: none;
-
-  @media (min-width:1024px) {
-    display: block;
-  }
-}
-
 .menu {
   margin: 0;
   padding: 0;

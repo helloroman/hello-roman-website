@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Logo from '../../assets/images/helloroman-logo.svg';
 import posed from 'react-pose';
 import styles from './Navigation.module.scss';
 
@@ -30,7 +29,7 @@ class Navigation extends React.Component {
     const { isMenuOpen } = this.state;
     return (
       <div className={styles.navigationWrapper}>
-        <Logo className={styles.logo} />
+        <p>Logo</p>
         <MenuWrapper
           pose={isMenuOpen ? 'open' : 'closed'}
           className={styles.menu}
