@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import 'normalize.css';
 import './global.scss';
-import styles from './index.module.scss';
 
 import Navigation from '../components/Navigation/Navigation';
 import HeroImage from '../components/HeroImage/HeroImage';

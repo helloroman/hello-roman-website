@@ -1,33 +1,26 @@
 .circle {
-  z-index: 9999;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
+  @include absolute(left 0 right 0 bottom 20px);
+  @include circle(30px);
+  @include flex-centered;
+
+  z-index: $z-index-8;
   margin: 0 auto;
-  width: 30px;
-  height: 30px;
-  background: rgba(#4123DE, .5);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba($accentColor, .5);
 
   &Inner {
-    width: 20px;
-    height: 20px;
-    background: #4123DE;
-    border-radius: 50%;
+    @include circle(20px);
+
+    background: $accentColor;
     position: relative;
 
     &::before,
     &::after {
+      @include sizing(8px 2px);
+
       content: '';
       display: block;
       position: absolute;
       background: white;
-      width: 8px;
-      height: 2px;
     }
 
     &::before {

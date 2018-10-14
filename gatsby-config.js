@@ -6,6 +6,16 @@ module.exports = {
     `gatsby-plugin-react-svg`,
     'gatsby-plugin-sass',
     {
+      resolve: 'gatsby-plugin-sass-resources',
+      options: {
+        resources: [
+          './src/assets/styles/variables.scss',
+          './src/assets/styles/mixins.scss',
+          './src/assets/styles/typography.scss'
+        ]
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
