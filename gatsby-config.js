@@ -3,8 +3,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    `gatsby-plugin-react-svg`,
-    'gatsby-plugin-sass',
+    'gatsby-plugin-react-svg',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-resolve-src',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
