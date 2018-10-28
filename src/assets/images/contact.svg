@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="139px" viewBox="0 0 459 408" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="6.66395503%" y1="-63.8723166%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#7649F1" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#4123DE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.625111607">
+        <g id="Desktop-HD-Copy-2" transform="translate(-759.000000, -4023.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Group-14" transform="translate(337.000000, 3966.000000)">
+                <g id="Group-10" transform="translate(650.878887, 261.170938) rotate(35.000000) translate(-650.878887, -261.170938) translate(402.378887, 117.170938)">
+                    <circle id="Oval-2" cx="144.376275" cy="143.527853" r="143.5"></circle>
+                    <circle id="Oval-2-Copy" cx="353.376275" cy="143.527853" r="143.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

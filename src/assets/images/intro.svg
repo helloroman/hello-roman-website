@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 167 134" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="6.66395503%" y1="-63.8723166%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#7649F1" stop-opacity="0.686565897" offset="0%"></stop>
+            <stop stop-color="#4123DE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-74.000000, -637.000000)" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(161.086607, 700.444567) rotate(72.000000) translate(-161.086607, -700.444567) translate(85.586607, 623.944567)">
+                <ellipse id="Oval" fill="url(#linearGradient-1)" opacity="0.690345982" cx="37.5362935" cy="115.405549" rx="37.5278023" ry="37.4955328"></ellipse>
+                <ellipse id="Oval-Copy" fill="#4123DE" opacity="0.604296875" cx="56.9411598" cy="88.1970074" rx="48.786143" ry="48.9774185"></ellipse>
+                <ellipse id="Oval-Copy-2" fill="url(#linearGradient-1)" opacity="0.326339286" cx="88.3500112" cy="63.0181922" rx="62.3676334" ry="62.6121577"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

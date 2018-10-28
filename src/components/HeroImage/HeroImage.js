@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ActionButton from 'components/ActionButton/ActionButton';
-import CTAButton from 'components/CTAButton/CTAButton';
 import roman from 'assets/images/helloroman.png';
-import Logo from 'assets/images/helloroman-logo.svg';
 import { zIndex, colors, media } from 'utils';
 
 const StyledWrapper = styled.div`
@@ -62,15 +60,14 @@ const StyledContent = styled.div`
   `};
 `;
 
-const StyledLogo = styled(Logo)`
-  width: 70%;
-  
-  ${media.tablet`
-    width: 200px;
-  `}
+const StyledHeading = styled.h1`
+  font-size: 5em;
+  line-height: .8;
+  letter-spacing: -.03em;
+  margin: 0;
   
   ${media.desktop`
-    width: 300px;
+    font-size: 6em;
   `}
 `;
 
@@ -91,7 +88,11 @@ const DesktopActionButton = styled(ActionButton)`
 export default () => (
   <StyledWrapper>
     <StyledContent>
-      <StyledLogo />
+      {/*<StyledLogo />*/}
+      <StyledHeading>
+        hello,<br />
+        roman
+      </StyledHeading>
       <p>frontend developer</p>
       <p>twórca internetowy</p>
       <DesktopActionButton />

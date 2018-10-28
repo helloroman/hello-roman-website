@@ -16,6 +16,13 @@ const StyledActionButton = styled.div`
   z-index: 8888;
   margin: 0 auto;
   background-color: rgba(${colors.accentRGB}, .5);
+  cursor: pointer;
+  box-shadow: 0 0 0 2px rgba(${colors.accentRGB}, 0);
+  transition: box-shadow .3s ease-in;
+  
+  :hover {
+    box-shadow: 0 0 0 5px rgba(${colors.accentRGB}, .2);
+  }
 
   ${media.desktop`
     position: static;
