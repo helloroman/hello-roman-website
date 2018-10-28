@@ -3,18 +3,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    `gatsby-plugin-react-svg`,
-    'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-sass-resources',
-      options: {
-        resources: [
-          './src/assets/styles/variables.scss',
-          './src/assets/styles/mixins.scss',
-          './src/assets/styles/typography.scss'
-        ]
-      },
-    },
+    'gatsby-plugin-react-svg',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-resolve-src',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

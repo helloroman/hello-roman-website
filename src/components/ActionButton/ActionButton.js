@@ -1,8 +1,61 @@
 import React from 'react';
-import styles from './ActionButton.module.scss';
+import styled from 'styled-components';
+import { media, colors } from 'utils';
 
-export default () => (
-  <div className={styles.circle}>
-    <div className={styles.circleInner} />
-  </div>
-);
+const StyledActionButton = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8888;
+  margin: 0 auto;
+  background-color: rgba(${colors.accentRGB}, .5);
+
+  ${media.desktop`
+    position: static;
+    margin: 50px auto;
+  `}
+  
+  & div {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px; 
+    background: ${colors.accent};
+    position: relative;
+
+    ::before,
+    ::after {
+      width: 8px;
+      height: 2px;
+      content: '';
+      display: block;
+      position: absolute;
+      background: white;
+    }
+
+    &::before {
+      left: 4px;
+      top: 50%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      right: 4px;
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+  }
+}
+`;
+
+export default (props) => (
+  <StyledActionButton {...props}>
+    <div />
+  </StyledActionButton>
+)
