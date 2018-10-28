@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ActionButton from 'components/ActionButton/ActionButton';
+import CTAButton from 'components/CTAButton/CTAButton';
 import roman from 'assets/images/helloroman.png';
 import Logo from 'assets/images/helloroman-logo.svg';
 import { zIndex, colors, media } from 'utils';
