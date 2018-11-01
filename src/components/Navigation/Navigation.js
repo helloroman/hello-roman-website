@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { goToAnchor } from 'react-scrollable-anchor';
+import debounce from 'lodash.debounce';
 import Logo from 'assets/images/helloroman-logo.svg';
 import styled from 'styled-components';
 import { media, typography } from 'utils';
@@ -28,6 +30,8 @@ const NavigationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: ${({hasBackground}) => hasBackground ? colors.light : 'transparent'};
+  transition: background-color .3s ease-out;
 
   ${media.desktop`
     align-items: center;
@@ -103,15 +107,19 @@ class Navigation extends Component {
   state = {
     isMenuOpen: false,
     isDesktop: false,
+    hasHeaderBackground: false,
   }
 
   componentDidMount() {
     this.updateWindowDimensions();
+    this.updateScrollPosition();
     window.addEventListener('resize', this.updateWindowDimensions);
+    window.addEventListener('scroll', debounce(this.updateScrollPosition, 50));
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
+    window.removeEventListener('scroll', this.updateScrollPosition);
   }
 
   updateWindowDimensions = () => {
@@ -122,26 +130,53 @@ class Navigation extends Component {
     }
   }
 
+  updateScrollPosition = () => {
+    this.setState({
+      hasHeaderBackground: window.scrollY > window.innerHeight
+    });
+  }
+
   handleMenuToggle = () => {
     this.setState({
       isMenuOpen: !this.state.isMenuOpen,
-    })
+    });
+  }
+
+  handleMenuClose = () => {
+    if (!this.state.isDesktop) {
+      this.setState({
+        isMenuOpen: false,
+      });
+    }
+  }
+
+  handleScrolling = (name) => {
+    goToAnchor(name, false);
+    this.handleMenuClose();
   }
 
   render() {
-    const { isMenuOpen, isDesktop } = this.state;
+    const { isMenuOpen, isDesktop, hasHeaderBackground } = this.state;
     return (
-      <NavigationWrapper>
-        <StyledLogo />
+      <NavigationWrapper hasBackground={hasHeaderBackground}>
+        <StyledLogo onClick={() => this.handleScrolling('hero')}/>
         <StyledMenuWrapper
           pose={isMenuOpen ? 'open' : 'closed'}
           isDesktop={isDesktop}
         >
           <StyledMenuList>
-            <StyledNavItem>kursy</StyledNavItem>
-            <StyledNavItem>youtube</StyledNavItem>
-            <StyledNavItem>wydarzenia</StyledNavItem>
-            <StyledNavItem>kontakt</StyledNavItem>
+            <StyledNavItem onClick={() => this.handleScrolling('intro')}>
+              kursy
+            </StyledNavItem>
+            <StyledNavItem onClick={() => this.handleScrolling('vlog')}>
+              youtube
+            </StyledNavItem>
+            <StyledNavItem onClick={() => this.handleScrolling('meetups')}>
+              wydarzenia
+            </StyledNavItem>
+            <StyledNavItem onClick={() => this.handleScrolling('contact')}>
+              kontakt
+            </StyledNavItem>
             <StyledNavItem>
               <StyledLanguageSelectItem
                 hasSeparator

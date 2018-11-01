@@ -19,7 +19,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     background-size: auto 90%;
-    background-position: 80% 100%;
+    background-position: 60% 100%;
   `}
   
   ::after {
@@ -56,7 +56,7 @@ const StyledContent = styled.div`
   
   ${media.desktop`
     top: 0;
-    left: -10%;
+    left: -15%;
   `};
 `;
 
@@ -88,7 +88,6 @@ const DesktopActionButton = styled(ActionButton)`
 export default () => (
   <StyledWrapper>
     <StyledContent>
-      {/*<StyledLogo />*/}
       <StyledHeading>
         hello,<br />
         roman
