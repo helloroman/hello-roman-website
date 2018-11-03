@@ -4,7 +4,7 @@ import MeetingInfo from 'components/MeetingInfo/MeetingInfo';
 
 const StyledMeetingList = styled.ul`
   padding: 0;
-  margin: 100px 0;
+  margin: 100px 0 30px 0;
 `;
 
 const MeetingList = ({meetings}) => (

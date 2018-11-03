@@ -5,8 +5,8 @@ import { media, colors, typography } from 'utils';
 const StyledCTAButton = styled.button`
   font-size: .8em;
   font-weight: ${typography.fontWeightMedium};
-  color: ${colors.accent};
-  border: 2px solid ${colors.accent};
+  color: ${({ctaDisabled}) => ctaDisabled ? colors.dark : colors.accent};
+  border: 2px solid ${({ctaDisabled}) => ctaDisabled ? colors.dark : colors.accent};
   background: ${colors.light};
   padding: 10px 30px;
   border-radius: 50px;

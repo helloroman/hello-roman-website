@@ -85,8 +85,8 @@ const DesktopActionButton = styled(ActionButton)`
   `}
 `;
 
-export default () => (
-  <StyledWrapper>
+export default (props) => (
+  <StyledWrapper {...props}>
     <StyledContent>
       <StyledHeading>
         hello,<br />

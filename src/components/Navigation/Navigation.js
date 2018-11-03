@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { goToAnchor } from 'react-scrollable-anchor';
 import debounce from 'lodash.debounce';
+import { scrollIt } from 'utils/scroll';
 import Logo from 'assets/images/helloroman-logo.svg';
 import styled from 'styled-components';
 import { media, typography } from 'utils';
@@ -95,7 +95,8 @@ const StyledLanguageSelectItem = styled.span`
 `;
 
 const StyledLogo = styled(Logo)`
-  width: 70px;
+  width: 70px;    
+
   
   ${media.desktop`
     width: 80px;
@@ -151,7 +152,13 @@ class Navigation extends Component {
   }
 
   handleScrolling = (name) => {
-    goToAnchor(name, false);
+    const element = document.getElementById(name);
+    scrollIt(
+      element,
+      300,
+      'easeOutQuad',
+      () => console.log(`Just finished scrolling to ${window.pageYOffset}px`)
+    );
     this.handleMenuClose();
   }
 
@@ -159,17 +166,17 @@ class Navigation extends Component {
     const { isMenuOpen, isDesktop, hasHeaderBackground } = this.state;
     return (
       <NavigationWrapper hasBackground={hasHeaderBackground}>
-        <StyledLogo onClick={() => this.handleScrolling('hero')}/>
+        <StyledLogo />
         <StyledMenuWrapper
           pose={isMenuOpen ? 'open' : 'closed'}
           isDesktop={isDesktop}
         >
           <StyledMenuList>
-            <StyledNavItem onClick={() => this.handleScrolling('intro')}>
-              kursy
-            </StyledNavItem>
             <StyledNavItem onClick={() => this.handleScrolling('vlog')}>
-              youtube
+              vlog
+            </StyledNavItem>
+            <StyledNavItem onClick={() => this.handleScrolling('courses')}>
+              kursy
             </StyledNavItem>
             <StyledNavItem onClick={() => this.handleScrolling('meetups')}>
               wydarzenia

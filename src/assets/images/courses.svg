@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 121 179" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="6.66395503%" y1="-63.8723166%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#7649F1" stop-opacity="0.686565897" offset="0%"></stop>
+            <stop stop-color="#4123DE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.625111607">
+        <g id="Desktop-HD-Copy-2" transform="translate(-920.000000, -2888.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Group-11" transform="translate(895.000000, 2883.000000)">
+                <path d="M85.1378496,183.275699 C118.351067,183.275699 145.275699,156.351067 145.275699,123.13785 C145.275699,89.9246324 118.351067,63 85.1378496,63 C56.496005,63 32.5307902,83.0230328 26.4763732,109.834931 C25.5100598,114.114235 25,118.566477 25,123.13785 C25,139.716459 27.7881193,180.660924 27.7881193,180.660924 C27.7881193,180.660924 68.5032421,183.275699 85.1378496,183.275699 Z" id="Oval-Copy-4" transform="translate(85.137850, 123.137850) rotate(-225.000000) translate(-85.137850, -123.137850) "></path>
+                <path d="M84.9939386,34.1317882 C92.8020573,34.1317882 99.1317882,27.8020573 99.1317882,19.9939386 C99.1317882,12.1858199 92.8020573,5.85608904 84.9939386,5.85608904 C78.2605071,5.85608904 72.6265078,10.563318 71.2031707,16.866546 C70.9759994,17.8725708 70.856089,18.9192514 70.856089,19.9939386 C70.856089,23.8914157 71.3876201,33.6002571 71.3876201,33.6002571 C71.3876201,33.6002571 81.083297,34.1317882 84.9939386,34.1317882 Z" id="Oval-Copy-4" transform="translate(84.993939, 19.993939) rotate(-45.000000) translate(-84.993939, -19.993939) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

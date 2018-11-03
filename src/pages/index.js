@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor'
 import { Helmet } from 'react-helmet';
 import { createGlobalStyle } from 'styled-components';
 import 'normalize.css';
@@ -11,12 +10,13 @@ import IntroImage from 'assets/images/intro.svg';
 import VlogImage from 'assets/images/vlog.svg';
 import MeetImage from 'assets/images/meet.svg';
 import ContactImage from 'assets/images/contact.svg';
+import CoursesImage from 'assets/images/courses.svg';
 
 import Navigation from '../components/Navigation/Navigation';
 import HeroImage from '../components/HeroImage/HeroImage';
 
 const pageContent = {
-  intro: {
+  hello: {
     heading: <span>cześć,<br />tu roman!</span>,
     paragraph: 'Jestem frontendowcem, copywriterem oraz twórcą internetowym. Na co dzień tworzę rozwiązania dla dużych, komercyjnych projektów, jednak kiedy tylko mogę, za pośrednictwem mojego vloga pomagam innym dotrzeć do celu, do którego ja sam niedawno uparcie zmierzałem – do zostania programistą.',
   },
@@ -29,6 +29,11 @@ const pageContent = {
   meetups: {
     heading: <span>spotkajmy się!</span>,
     paragraph: 'Żywa i niezwykle zaangażowana społeczność IT nieustannie mnie fascynuje. Staram się brać udział w jak największej liczbie eventów zarówno jako słuchacz oraz prelegent. Sprawdź, na jakich eventach w najbliższym czasie planuję się pojawić.',
+  },
+  courses: {
+    heading: <span>kurs – na front!</span>,
+    paragraph: 'Dzielenie się wiedzą i doświadczeniem sprawia mi ogromną satysfakcję – stąd pomysł na vloga. Dodatkowo jednak lubię tworzyć nieco dłuższe serie, w których opowiadam szerzej o pewnych zagadnieniach. Już wkrótce pod poniższym linkiem znajdziesz kilka moich kursów.',
+    cta: 'już niebawem!',
   },
   contact: {
     heading: <span>w kontakcie</span>,
@@ -118,6 +123,25 @@ const StyledVlogImage = styled(VlogImage)`
   `}
 `;
 
+const StyledCoursesImage = styled(CoursesImage)`
+  max-width: 80px;
+  position: relative;
+  width: 30vw;
+  right: -40%;
+  top: 80px;
+  
+  ${media.tablet`
+    max-width: 130px;
+    width: 30vw;
+  `}
+  
+  ${media.desktop`
+    max-width: 180px;
+    right: -30px;
+    top: -20px;
+  `}
+`;
+
 const StyledMeetImage = styled(MeetImage)`
   max-width: 200px;
   position: relative;
@@ -154,78 +178,66 @@ const StyledContactImage = styled(ContactImage)`
   `}
 `;
 
-export default class extends Component {
-  componentDidMount() {
-    this.mounted = true;
-
-    if (this.mounted) {
-      configureAnchors({offset: -350, scrollDuration: 350})
-    }
-  }
-
-  componentWillUnmount() {
-    this.mounted = false;
-  }
-
-  render() {
-    return (
-      <div>
-        <Helmet>
-          <html lang="en" />
-          <title>
-            Hello Roman – frontend developer / youtube creator
-          </title>
-          <meta
-            name="description"
-            content="Some content."
-          />
-        </Helmet>
-        <GlobalStyle />
-        <Navigation />
-        <ScrollableAnchor id={'hero'}>
-          <HeroImage />
-        </ScrollableAnchor>
-        <StyledSectionsWrapper>
-          <ScrollableAnchor id={'intro'}>
-            <SectionTemplate
-              heading={pageContent.intro.heading}
-              paragraph={pageContent.intro.paragraph}
-            >
-              <StyledIntroImage />
-            </SectionTemplate>
-          </ScrollableAnchor>
-          <ScrollableAnchor id={'vlog'}>
-            <SectionTemplate
-              isMirrored
-              heading={pageContent.vlog.heading}
-              paragraph={pageContent.vlog.paragraph}
-              cta={pageContent.vlog.cta}
-              link={pageContent.vlog.link}
-            >
-              <StyledVlogImage />
-            </SectionTemplate>
-          </ScrollableAnchor>
-          <ScrollableAnchor id={'meetups'}>
-            <SectionTemplate
-              heading={pageContent.meetups.heading}
-              paragraph={pageContent.meetups.paragraph}
-            >
-              <StyledMeetImage />
-            </SectionTemplate>
-          </ScrollableAnchor>
-          <MeetingList meetings={meetings}/>
-          <ScrollableAnchor id={'contact'}>
-            <SectionTemplate
-              heading={pageContent.contact.heading}
-              paragraph={pageContent.contact.paragraph}
-              cta={pageContent.contact.cta}
-              link={pageContent.contact.link}
-            >
-              <StyledContactImage />
-            </SectionTemplate>
-          </ScrollableAnchor>
-        </StyledSectionsWrapper>
-      </div>
-    );
-  }
-}
+export default () => (
+  <div>
+    <Helmet>
+      <html lang="en" />
+      <title>
+        Hello Roman – frontend developer / youtube creator
+      </title>
+      <meta
+        name="description"
+        content="Some content."
+      />
+    </Helmet>
+    <GlobalStyle />
+    <Navigation />
+    <HeroImage />
+    <StyledSectionsWrapper>
+      <SectionTemplate
+        id={'hello'}
+        heading={pageContent.hello.heading}
+        paragraph={pageContent.hello.paragraph}
+      >
+        <StyledIntroImage />
+      </SectionTemplate>
+      <SectionTemplate
+        id={'vlog'}
+        isMirrored
+        heading={pageContent.vlog.heading}
+        paragraph={pageContent.vlog.paragraph}
+        cta={pageContent.vlog.cta}
+        link={pageContent.vlog.link}
+      >
+        <StyledVlogImage />
+      </SectionTemplate>
+      <SectionTemplate
+        id={'courses'}
+        heading={pageContent.courses.heading}
+        paragraph={pageContent.courses.paragraph}
+        cta={pageContent.courses.cta}
+        ctaDisabled
+      >
+        <StyledCoursesImage />
+      </SectionTemplate>
+      <SectionTemplate
+        isMirrored
+        id={'meetups'}
+        heading={pageContent.meetups.heading}
+        paragraph={pageContent.meetups.paragraph}
+      >
+        <StyledMeetImage />
+      </SectionTemplate>
+      <MeetingList meetings={meetings} />
+      <SectionTemplate
+        id={'contact'}
+        heading={pageContent.contact.heading}
+        paragraph={pageContent.contact.paragraph}
+        cta={pageContent.contact.cta}
+        link={pageContent.contact.link}
+      >
+        <StyledContactImage />
+      </SectionTemplate>
+    </StyledSectionsWrapper>
+  </div>
+);

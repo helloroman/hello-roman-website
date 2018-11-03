@@ -44,13 +44,13 @@ const StyledImageWrapper = styled.div`
   `}
 `;
 
-const SectionTemplate = ({isMirrored, heading, paragraph, cta, link, image, children}) => (
-  <StyledWrapper isMirrored={isMirrored}>
+const SectionTemplate = ({isMirrored, heading, paragraph, cta, ctaDisabled, link, image, children, id}) => (
+  <StyledWrapper isMirrored={isMirrored} id={id}>
     <StyledImageWrapper>{children}</StyledImageWrapper>
     <StyledSectionContent>
       <SectionHeading>{heading}</SectionHeading>
       <SectionParagraph>{paragraph}</SectionParagraph>
-      {cta && <a href={link} rel={'noopener noreferrer'} target={'_blank'}><CTAButton>{cta}</CTAButton></a>}
+      {cta && <a href={link} rel={'noopener noreferrer'} target={'_blank'}><CTAButton ctaDisabled={ctaDisabled}>{cta}</CTAButton></a>}
     </StyledSectionContent>
   </StyledWrapper>
 );
