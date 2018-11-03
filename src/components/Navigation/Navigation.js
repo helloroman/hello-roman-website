@@ -34,6 +34,7 @@ const NavigationWrapper = styled.div`
   transition: background-color .3s ease-out;
 
   ${media.desktop`
+    padding: 15px 50px 15px 50px;
     align-items: center;
     justify-content: space-between;
   `}
@@ -156,8 +157,7 @@ class Navigation extends Component {
     scrollIt(
       element,
       300,
-      'easeOutQuad',
-      () => console.log(`Just finished scrolling to ${window.pageYOffset}px`)
+      'easeOutQuad'
     );
     this.handleMenuClose();
   }
@@ -184,13 +184,13 @@ class Navigation extends Component {
             <StyledNavItem onClick={() => this.handleScrolling('contact')}>
               kontakt
             </StyledNavItem>
-            <StyledNavItem>
-              <StyledLanguageSelectItem
-                hasSeparator
-                isActive
-              >PL</StyledLanguageSelectItem>
-              <StyledLanguageSelectItem>EN</StyledLanguageSelectItem>
-            </StyledNavItem>
+            {/*<StyledNavItem>*/}
+              {/*<StyledLanguageSelectItem*/}
+                {/*hasSeparator*/}
+                {/*isActive*/}
+              {/*>PL</StyledLanguageSelectItem>*/}
+              {/*<StyledLanguageSelectItem>EN</StyledLanguageSelectItem>*/}
+            {/*</StyledNavItem>*/}
           </StyledMenuList>
         </StyledMenuWrapper>
         <Hamburger onClick={this.handleMenuToggle} />

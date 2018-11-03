@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { goToAnchor } from 'react-scrollable-anchor';
+import { scrollIt } from 'utils/scroll';
 import { media, colors } from 'utils';
 
 const StyledActionButton = styled.div`
@@ -62,7 +62,11 @@ const StyledActionButton = styled.div`
 }
 `;
 
-const handleScrolling = () => goToAnchor('intro');
+const handleScrolling = () => scrollIt(
+  document.getElementById('hello'),
+  300,
+  'easeOutQuad',
+);
 
 export default (props) => (
   <StyledActionButton {...props} onClick={handleScrolling}>

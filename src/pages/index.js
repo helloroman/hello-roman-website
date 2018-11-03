@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import posed from 'react-pose';
+import VisibilitySensor from 'react-visibility-sensor';
 import { Helmet } from 'react-helmet';
 import { createGlobalStyle } from 'styled-components';
 import 'normalize.css';
@@ -86,6 +88,11 @@ const StyledSectionsWrapper = styled.div`
   align-items: center;
   flex-direction: column;
 `;
+
+const PosedImage = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
 
 const StyledIntroImage = styled(IntroImage)`
   max-width: 200px;
@@ -178,66 +185,110 @@ const StyledContactImage = styled(ContactImage)`
   `}
 `;
 
-export default () => (
-  <div>
-    <Helmet>
-      <html lang="en" />
-      <title>
-        Hello Roman – frontend developer / youtube creator
-      </title>
-      <meta
-        name="description"
-        content="Some content."
-      />
-    </Helmet>
-    <GlobalStyle />
-    <Navigation />
-    <HeroImage />
-    <StyledSectionsWrapper>
-      <SectionTemplate
-        id={'hello'}
-        heading={pageContent.hello.heading}
-        paragraph={pageContent.hello.paragraph}
-      >
-        <StyledIntroImage />
-      </SectionTemplate>
-      <SectionTemplate
-        id={'vlog'}
-        isMirrored
-        heading={pageContent.vlog.heading}
-        paragraph={pageContent.vlog.paragraph}
-        cta={pageContent.vlog.cta}
-        link={pageContent.vlog.link}
-      >
-        <StyledVlogImage />
-      </SectionTemplate>
-      <SectionTemplate
-        id={'courses'}
-        heading={pageContent.courses.heading}
-        paragraph={pageContent.courses.paragraph}
-        cta={pageContent.courses.cta}
-        ctaDisabled
-      >
-        <StyledCoursesImage />
-      </SectionTemplate>
-      <SectionTemplate
-        isMirrored
-        id={'meetups'}
-        heading={pageContent.meetups.heading}
-        paragraph={pageContent.meetups.paragraph}
-      >
-        <StyledMeetImage />
-      </SectionTemplate>
-      <MeetingList meetings={meetings} />
-      <SectionTemplate
-        id={'contact'}
-        heading={pageContent.contact.heading}
-        paragraph={pageContent.contact.paragraph}
-        cta={pageContent.contact.cta}
-        link={pageContent.contact.link}
-      >
-        <StyledContactImage />
-      </SectionTemplate>
-    </StyledSectionsWrapper>
-  </div>
-);
+export default class extends Component {
+  state = {
+    isIntroVisible: false,
+    isVlogVisible: false,
+    isCoursesVisible: false,
+    isMeetupsVisible: false,
+    isContactVisible: false,
+  }
+
+  componentDidMount() {
+    this.mounted = true;
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
+  handleVisibilityChange = (name, isVisible) => {
+    console.log(`${name} ${isVisible}`);
+  }
+
+  render() {
+    return (
+      <div>
+        <Helmet>
+          <html lang="en" />
+          <title>
+            Hello Roman – frontend developer / youtube creator
+          </title>
+          <meta
+            name="description"
+            content="Some content."
+          />
+        </Helmet>
+        <GlobalStyle />
+        <Navigation />
+        <HeroImage />
+        <StyledSectionsWrapper>
+          <SectionTemplate
+            id={'hello'}
+            heading={pageContent.hello.heading}
+            paragraph={pageContent.hello.paragraph}
+          >
+            <VisibilitySensor onChange={(isVisible) => this.setState({isIntroVisible: this.state.isIntroVisible ? 'true' : isVisible})}>
+              <PosedImage pose={this.state.isIntroVisible ? 'enter' : 'exit'}>
+                <StyledIntroImage />
+              </PosedImage>
+            </VisibilitySensor>
+          </SectionTemplate>
+          <SectionTemplate
+            id={'vlog'}
+            isMirrored
+            heading={pageContent.vlog.heading}
+            paragraph={pageContent.vlog.paragraph}
+            cta={pageContent.vlog.cta}
+            link={pageContent.vlog.link}
+          >
+            <VisibilitySensor onChange={(isVisible) => this.setState({isVlogVisible: this.state.isVlogVisible ? 'true' : isVisible})}>
+              <PosedImage pose={this.state.isVlogVisible ? 'enter' : 'exit'}>
+                <StyledVlogImage />
+              </PosedImage>
+            </VisibilitySensor>
+          </SectionTemplate>
+          <SectionTemplate
+            id={'courses'}
+            heading={pageContent.courses.heading}
+            paragraph={pageContent.courses.paragraph}
+            cta={pageContent.courses.cta}
+            ctaDisabled
+          >
+            <VisibilitySensor onChange={(isVisible) => this.setState({isCoursesVisible: this.state.isCoursesVisible ? 'true' : isVisible})}>
+              <PosedImage pose={this.state.isCoursesVisible ? 'enter' : 'exit'}>
+                <StyledCoursesImage />
+              </PosedImage>
+            </VisibilitySensor>
+          </SectionTemplate>
+          <SectionTemplate
+            isMirrored
+            id={'meetups'}
+            heading={pageContent.meetups.heading}
+            paragraph={pageContent.meetups.paragraph}
+          >
+            <VisibilitySensor onChange={(isVisible) => this.setState({isMeetupsVisible: this.state.isMeetupsVisible ? 'true' : isVisible})}>
+              <PosedImage pose={this.state.isMeetupsVisible ? 'enter' : 'exit'}>
+                <StyledMeetImage />
+              </PosedImage>
+            </VisibilitySensor>
+          </SectionTemplate>
+          <MeetingList meetings={meetings} />
+          <SectionTemplate
+            id={'contact'}
+            heading={pageContent.contact.heading}
+            paragraph={pageContent.contact.paragraph}
+            cta={pageContent.contact.cta}
+            link={pageContent.contact.link}
+          >
+            <VisibilitySensor onChange={(isVisible) => this.setState({isContactVisible: this.state.isContactVisible ? 'true' : isVisible})}>
+              <PosedImage pose={this.state.isContactVisible ? 'enter' : 'exit'}>
+                <StyledContactImage />
+              </PosedImage>
+            </VisibilitySensor>
+          </SectionTemplate>
+        </StyledSectionsWrapper>
+      </div>
+    )
+  }
+}

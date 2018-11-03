@@ -21,6 +21,7 @@
     "react-pose": "^3.3.4",
     "react-scrollable-anchor": "^0.6.1",
     "react-tweet-embed": "^1.1.1",
+    "react-visibility-sensor": "^5.0.2",
     "styled-components": "^4.0.2"
   },
   "devDependencies": {
